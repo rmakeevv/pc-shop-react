@@ -7,9 +7,9 @@ export const Products = () => {
     const dispatch = useDispatch()
     const data = useLoaderData()
     return  (
-        <div className={'bg-gradient-to-r from-cyan-400 to-blue-700 md:p-6'}>
+        <div className={'md:p-6 bg-neutral-900'}>
             <div className={'flex flex-col container mx-auto md:px-8'}>
-                <div className={'p-8 bg-slate-900 md:rounded-md md:flex items-center'}>
+                <div className={'p-8 md:rounded-xl md:flex items-center '} style={{border: "1px solid rgb(84 84 84 / 48%)"}} >
                     <h1 className={'md:text-xl text-white'}>{data ? "В наличии "  + data.length + " товар(ов)" : "error"}</h1>
                     <SortForm/>
                 </div>
