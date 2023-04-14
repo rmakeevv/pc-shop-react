@@ -4,9 +4,9 @@ import {Link} from "react-router-dom";
 export const OrderItem = ({img, name, brand, price, _id}) => {
     const image = getImage(img)
     return (
-        <div className={'flex justify-between items-center p-4'}>
+        <div className={'md:flex justify-between items-center p-4'}>
             <div className={'flex items-center gap-4'}>
-                <Link to={`/products/${_id}`} className={'bg-slate-900 p-6 rounded-md'}>
+                <Link to={`/products/${_id}`} className={'bg-neutral-200 p-6 text-black rounded-md'}>
                     Подробнее
                 </Link>
                 <h1>{name}</h1>

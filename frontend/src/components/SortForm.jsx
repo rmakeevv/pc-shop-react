@@ -7,10 +7,10 @@ export const SortForm = () => {
             <div>
                 <span className={'md:text-xl mr-2'}>Категории</span>
                 <select name={'first'} className={'text-emerald-300 bg-neutral-900 focus:border-0'} onChange={(event) => submit(event.currentTarget.form)}>
-                    <option defaultChecked={true} value={'all'} className={'text-slate-900'}>все товары</option>
-                    <option value={'desktops'} className={'text-slate-900'}>Компьютеры</option>
-                    <option value={'phones'} className={'text-slate-900'}>Телефоны</option>
-                    <option value={'laptops'} className={'text-slate-900'}>Ноутбуки</option>
+                    <option defaultChecked={true} value={'all'}>все товары</option>
+                    <option value={'desktops'} >Компьютеры</option>
+                    <option value={'phones'}>Телефоны</option>
+                    <option value={'laptops'}>Ноутбуки</option>
                 </select>
             </div>
             <div>

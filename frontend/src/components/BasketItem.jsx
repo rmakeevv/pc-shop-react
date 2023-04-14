@@ -7,9 +7,9 @@ export const BasketItem = ({ _id, name, brand, price, basketItemId, img}) => {
     const image = `http://localhost:5000/images/${img}`
     const dispatch = useDispatch()
     return (
-        <div className={'p-4 text-white flex justify-center'}>
-            <img width={'340px'} src={image} alt={'product'}/>
-            <div className={'flex flex-col items-start justify-center'}>
+        <div className={'p-4 text-white md:flex justify-center'}>
+            <img width={'320px'} src={image} alt={'product'}/>
+            <div className={'flex flex-col items-start justify-center px-6'}>
                 <div className={'flex flex-col'}>
                     <Link to={`/products/${_id}`}>
                         {brand + " " + name}

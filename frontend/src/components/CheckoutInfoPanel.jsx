@@ -18,7 +18,7 @@ export const CheckoutInfoPanel = () => {
             <span className={'m-4'}>
                         Товаров в заказе: {basket.items.length}
                     </span>
-            <button className={'px-6 py-3 bg-blue-500 rounded-md'} onClick={createOrder}>Заказать</button>
+            <button className={'px-6 py-3 bg-neutral-100 rounded-md text-black'} onClick={createOrder}>Заказать</button>
         </div>
     );
 };

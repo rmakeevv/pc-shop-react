@@ -9,9 +9,9 @@ export const Product = () => {
     return data
         ? (
             <div className={'text-slate-200 flex p-8 items-stretch justify-center'}>
-                <div className='md:flex items-start p-8 rounded-md justify-around container'>
+                <div className='md:flex items-start md:p-8 rounded-md justify-around container'>
                     <img src={picture} alt={'product'} width={'440px'}/>
-                    <div className={'grid items-center px-6 rounded-md justify-items-start'}>
+                    <div className={'grid items-center md:px-6 rounded-md justify-items-start'}>
                         <div className={'flex items-center py-6'}>
                             <h1 className={'text-xl'}>{data.name}</h1>
                             <button className={'ml-10 px-6 py-2 rounded-md bg-emerald-700'} onClick={() => navigate(-1)}>Назад</button>
