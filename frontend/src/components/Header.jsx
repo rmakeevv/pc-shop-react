@@ -28,7 +28,7 @@ export const Header = () => {
                         </Link>
                         {
                             auth.isLogged
-                                ? <Link to={`/profile/${auth.userId}`} className={'px-4'}>
+                                ? <Link to={`/profile/${auth.userId}`} className={'px-4 py-3'}>
                                     <img src={userIcon} alt={'user'} width={'40px'}/>
                                 </Link>
                                 : <Link to={'/auth'} className={'md:px-8 py-3 rounded-md mx-2 text-center flex items-center'}>

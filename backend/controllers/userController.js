@@ -1,12 +1,30 @@
 const client = require("../db");
 const db = client.db("online-store");
 const myColl = db.collection("users");
+const jwt = require('jsonwebtoken')
+
+async function userAuthorize(req, res) {
+    try {
+        const {authorization}  = await req.headers
+        jwt.verify(authorization.split(' ')[1], 'my_token_key')
+        res.status(200).send('Welcome')
+    } catch (e) {
+        console.log(e)
+        res.status(401).send('Unauthorized')
+    }
+}
 
 async function createUser(req, res) {
-    const data = await req.body
-    const isUser = await myColl.findOne({phone: data.phone})
-    const result = isUser || await myColl.insertOne(data);
-    res.send(result)
+    try {
+        const {phone} = await req.body
+        const isUser = await myColl.findOne({phone})
+        const user = isUser || await myColl.insertOne({phone});
+        user.token = jwt.sign({user_id: user._id}, 'my_token_key', {expiresIn: '2h'})
+        res.send(user)
+    } catch (e) {
+        console.log((e))
+    }
+
 }
 
 async function getUsers(req, res) {
@@ -16,5 +34,6 @@ async function getUsers(req, res) {
 
 module.exports = {
     createUser,
-    getUsers
+    getUsers,
+    userAuthorize
 }

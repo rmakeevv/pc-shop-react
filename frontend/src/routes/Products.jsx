@@ -7,7 +7,6 @@ export const Products = () => {
     const dispatch = useDispatch()
     const data = useLoaderData()
     return  (
-        <div>
             <div className={'flex flex-col container mx-auto md:px-12'}>
                 <div className={'p-8 md:rounded-xl md:flex items-center'} style={{border: "1px solid rgb(84 84 84 / 48%)"}} >
                     <h1 className={'md:text-xl text-white'}>{data ? "В наличии "  + data.length + " товар(ов)" : "error"}</h1>
@@ -25,6 +24,5 @@ export const Products = () => {
                     }
                 </div>
             </div>
-        </div>
     )
 }
