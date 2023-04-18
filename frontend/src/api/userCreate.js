@@ -18,8 +18,8 @@ export const userCreate = async ({request}) => {
         .then(data => data)
         .catch((err) => console.log(err.message))
     const userId = data.insertedId || data._id
-    localStorage.setItem("token", data.token)
-    localStorage.setItem("userId", userId)
+    await localStorage.setItem("token", data.token)
+    await localStorage.setItem("userId", userId)
     return data
         ? redirect(`/profile/${userId}`)
         : redirect('/auth')

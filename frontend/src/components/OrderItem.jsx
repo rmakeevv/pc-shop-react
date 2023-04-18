@@ -5,7 +5,7 @@ export const OrderItem = ({img, name, brand, price, _id}) => {
     const image = getImage(img)
     return (
         <div className={'md:flex justify-between items-center p-4'}>
-            <div className={'flex md:flex-row flex-col items-center gap-4'}>
+            <div className={'flex flex-row items-center gap-4'}>
                 <Link to={`/products/${_id}`} className={'bg-neutral-200 p-6 text-black rounded-md'}>
                     Подробнее
                 </Link>

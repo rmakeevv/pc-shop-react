@@ -19,22 +19,22 @@ export const Profile = () => {
 
     return (
             <div className={'justify-center text-white container mx-auto'}>
-                <div className={'flex flex-col p-4 rounded-md items-center gap-6'}>
+                <div className={'flex p-4 rounded-md justify-center gap-6'}>
                     {
                         auth.isLogged
                             ? (
-                                <>
+                                <div className={'flex flex-col gap-4 items-center'}>
                                     <img src={userIcon} width={'56px'} className={'rounded-md m-2'} alt={'user-ico'}/>
                                     <h1>Мой профиль</h1>
                                     <Link to={`/orders/${auth.userId}`} className={'px-6 py-3 text-black bg-neutral-200 rounded-md'}>Просмотреть мои заказы</Link>
                                     <Button type={'submit'} action={pageLogOut} text={'Сменить пользователя'}/>
-                                </>
+                                </div>
                             )
                             : (
-                                <>
+                                <div className={'flex flex-col items-center gap-6'}>
                                     <h1>Вы вышли из аккаунта!</h1>
                                     <Link to={'/auth'} className={'p-4 bg-emerald-700 rounded-md'}>Окей</Link>
-                                </>
+                                </div>
                             )
                     }
 

@@ -8,8 +8,8 @@ export const Products = () => {
     const data = useLoaderData()
     return  (
             <div className={'flex flex-col container mx-auto md:px-12'}>
-                <div className={'p-8 md:rounded-xl md:flex items-center'} style={{border: "1px solid rgb(84 84 84 / 48%)"}} >
-                    <h1 className={'md:text-xl text-white'}>{data ? "В наличии "  + data.length + " товар(ов)" : "error"}</h1>
+                <div className={'md:p-8 p-4 md:rounded-xl flex items-center md:flex-row flex-col justify-between'} style={{border: "1px solid rgb(84 84 84 / 48%)"}} >
+                    <h1 className={'md:text-xl text-white text-center'}>{data ? "В наличии "  + data.length + " товар(ов)" : "error"}</h1>
                     <SortForm/>
                 </div>
                 <div className={'grid md:gap-4 text-white py-2'}>

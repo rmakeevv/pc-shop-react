@@ -6,7 +6,7 @@ import {logIn} from "../authSlice";
 export const loader = async () => {
     const token = localStorage.getItem('token') || null
     const userId = localStorage.getItem('userId') || null
-    if (!token) {
+    if (!userId) {
         return null;
     }
 
@@ -27,8 +27,7 @@ export const Root = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (!localStorage.length) {
-            console.log('done')
+        if (!data) {
             return;
         }
         dispatch(logIn(data))
