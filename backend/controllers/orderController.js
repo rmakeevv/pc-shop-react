@@ -19,7 +19,7 @@ async function showUserOrders(req, res) {
     try {
         const {userid} = await req.params
         const {authorization} = await req.headers
-        jwt.verify(authorization.split(' ')[1], 'my_token_key')
+        await jwt.verify(authorization.split(' ')[1], 'my_token_key')
         const result = await myColl.find({userId: userid});
         const data = await result.toArray()
         res.send(data)

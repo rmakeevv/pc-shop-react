@@ -21,10 +21,13 @@ export const Orders = () => {
             <div className={'grid gap-4 mx-auto container text-white rounded-md md:px-8 py-4'}>
                     <h1 className={'text-center p-4'}>Ваши заказы</h1>
                     {
-                        data.map(({items, _id}, key) => {
+                        data.map(({items, _id, date}, key) => {
                             return (
                                 <div className={'bg-neutral-700 text-white md:p-4 rounded-md flex flex-col gap-4'} key={key}>
-                                    <h1 className={'p-4'}> Номер заказа: {_id}</h1>
+                                    <div className={'flex items-center'}>
+                                        <h1 className={'p-4'}> Номер заказа: {_id}</h1>
+                                        <span>Дата: { date || 'no date'}</span>
+                                    </div>
                                     <hr/>
                                     {
                                         items.map((item, key) => <OrderItem key={key} {...item}/>)

@@ -1,14 +1,21 @@
 import {useDispatch, useSelector} from "react-redux";
 import {createOrderApi} from "../api/createOrderApi";
 import {checkOut} from "../basketSlice";
+import {getDate} from "../services/getDate";
 
 export const CheckoutInfoPanel = () => {
     const basket = useSelector(state => state.basket.value)
+    const auth = useSelector(state => state.auth.value)
     const dispatch = useDispatch()
     const total = basket.items.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)
     const createOrder = () => {
-        createOrderApi(basket)
-            .then( data => console.log(data))
+        const order = {
+            items: basket.items,
+            date: getDate(),
+            userId: auth.userId
+        }
+        createOrderApi(order)
+            .then( data => data)
         dispatch(checkOut())
     }
 

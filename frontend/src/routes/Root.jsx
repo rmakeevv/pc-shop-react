@@ -7,7 +7,7 @@ export const loader = async () => {
     const token = localStorage.getItem('token') || null
     const userId = localStorage.getItem('userId') || null
     if (!token) {
-        return false
+        return null;
     }
 
     await fetch(`http://localhost:5000/users/auth`,
@@ -28,6 +28,7 @@ export const Root = () => {
 
     useEffect(() => {
         if (!localStorage.length) {
+            console.log('done')
             return;
         }
         dispatch(logIn(data))

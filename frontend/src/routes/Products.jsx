@@ -17,7 +17,7 @@ export const Products = () => {
                         data[0]
                             ? data.map((item, key) => <ProductItem key={key} {...item} action={() => dispatch(addItem(item))}/>)
                             : (
-                                <div className={'bg-slate-900 text-white p-4'}>
+                                <div className={'text-white p-4'}>
                                     <h1>Товары не найдены! Попробуйте позже.</h1>
                                 </div>
                             )
