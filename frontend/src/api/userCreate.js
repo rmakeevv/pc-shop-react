@@ -3,7 +3,6 @@ export const userCreate = async ({request}) => {
     const formData = await request.formData();
     const {number} = Object.fromEntries(formData);
     if (isNaN(Number(number))) {
-        console.log('nan')
         return 'Неправильно набран номер!'
     }
     const userData = {phone : number}

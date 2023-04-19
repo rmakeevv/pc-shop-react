@@ -22,10 +22,15 @@ export const basketSlice = createSlice({
                 isOrdered: true,
                 items: []
             }
+        },
+        deleteItems: (state) => {
+            state.value = {
+                items: []
+            }
         }
     }
 })
 
-export const {addItem, removeItem, checkOut, authUser} = basketSlice.actions
+export const {addItem, removeItem, checkOut, deleteItems} = basketSlice.actions
 
 export default basketSlice.reducer

@@ -12,7 +12,7 @@ export const BasketInfoPanel = () => {
             Выбрано товаров: {basket.items.length}
             { auth.isLogged
                 ? <Link to={'/checkout'} className={'bg-neutral-200 text-black px-6 py-3 rounded-md'}>Перейти к оформлению</Link>
-                : <Link to={'/auth'}>Войти в профиль</Link>
+                : <Link to={'/auth'} className={'bg-neutral-700 py-3 rounded-md px-6'}>Войти в профиль</Link>
             }
         </div>
     );

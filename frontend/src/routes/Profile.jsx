@@ -3,18 +3,19 @@ import {Link, redirect} from "react-router-dom";
 import {Button} from "../components/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {logOut} from "../authSlice";
+import {deleteItems} from "../basketSlice";
 export const loader = () => {
     if (!localStorage.getItem('token')) {
         return redirect('/auth')
     } else return null
 }
-
 export const Profile = () => {
     const auth = useSelector(state => state.auth.value)
     const dispatch = useDispatch()
     const pageLogOut = () => {
         localStorage.clear()
         dispatch(logOut())
+        dispatch(deleteItems())
     }
 
     return (
