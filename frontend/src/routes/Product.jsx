@@ -1,11 +1,12 @@
 import {Link, useLoaderData, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addItem} from "../basketSlice";
+import {getImage} from "../services/getImage";
 export const Product = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const data = useLoaderData()
-    const picture = `http://localhost:5000/images/${ 'asus-pc.png' && data.img }`
+    const picture = getImage(data.img)
     return data
         ? (
             <div className={'text-slate-200 flex p-8 items-stretch justify-center'}>

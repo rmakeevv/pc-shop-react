@@ -1,7 +1,8 @@
 import {Link} from "react-router-dom";
+import {getImage} from "../services/getImage";
 
 export const CheckoutItem = ({_id, name, brand, price, img}) => {
-    const image = `http://localhost:5000/images/${img}`
+    const image = getImage(img)
     return (
         <div className={'flex'}>
             <div className={'p-4 text-white flex justify-center'}>

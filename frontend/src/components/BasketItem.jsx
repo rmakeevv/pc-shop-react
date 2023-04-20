@@ -2,9 +2,10 @@ import {Link} from "react-router-dom";
 import {Button} from "./Button";
 import {removeItem} from "../basketSlice";
 import {useDispatch} from "react-redux";
+import {getImage} from "../services/getImage";
 
 export const BasketItem = ({ _id, name, brand, price, basketItemId, img}) => {
-    const image = `http://localhost:5000/images/${img}`
+    const image = getImage(img)
     const dispatch = useDispatch()
     return (
         <div className={'p-4 text-white md:flex justify-center'}>
