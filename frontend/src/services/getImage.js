@@ -1,1 +1,1 @@
-export const getImage = (src) => `http://localhost:5000/images/${src}`
+export const getImage = (src) => process.env.REACT_APP_API_URI + `/images/${src}`

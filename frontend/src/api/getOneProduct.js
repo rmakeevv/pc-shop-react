@@ -1,5 +1,6 @@
 export const getOneProduct = async({params}) => {
-    const data = await fetch(`http://localhost:5000/products/${params.id}`)
+    const apiURI = await process.env.REACT_APP_API_URI + `/products/${params.id}`
+    const data = await fetch(apiURI)
         .then(res => res.json())
         .then(data => data)
         .catch(err => console.log(err.message))

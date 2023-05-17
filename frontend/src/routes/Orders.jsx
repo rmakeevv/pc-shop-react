@@ -2,7 +2,7 @@ import {Link, useLoaderData} from "react-router-dom";
 import {OrderItem} from "../components/OrderItem";
 export const loader = async ({params}) => {
     const {userid} = params
-    const data = await fetch(`http://localhost:5000/orders/${userid}`,
+    const data = await fetch(process.env.REACT_APP_API_URI + `/orders/${userid}`,
         {
             headers: {
                 "authorization": "Bearer: " + localStorage.getItem("token"),

@@ -6,7 +6,7 @@ export const userCreate = async ({request}) => {
         return 'Неправильно набран номер!'
     }
     const userData = {phone : number}
-    const data = await fetch(`http://localhost:5000/users`, {
+    const data = await fetch(process.env.REACT_APP_API_URI + `/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

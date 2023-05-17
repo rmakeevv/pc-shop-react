@@ -3,8 +3,8 @@ export const getProducts = async({request}) => {
     const category = url.searchParams.get('category')
     const order = url.searchParams.get('order')
     const urlApi = category
-        ? `http://localhost:5000/categories/${category}/${order}`
-        : `http://localhost:5000/products/`
+        ? process.env.REACT_APP_API_URI + `/categories/${category}/${order}`
+        : process.env.REACT_APP_API_URI + `/products/`
     const data = await fetch(urlApi)
         .then(res => res.json())
         .then(data => data)

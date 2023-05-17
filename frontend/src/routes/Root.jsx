@@ -10,7 +10,7 @@ export const loader = async () => {
         return null;
     }
 
-    await fetch(`http://localhost:5000/users/auth`,
+    await fetch(process.env.REACT_APP_API_URI + `/users/auth`,
         {
             headers: {
                 "authorization": "Bearer: " + localStorage.getItem("token"),
