@@ -5,11 +5,11 @@ import {getImage} from "../services/getImage";
 export const ProductItem = ({name, brand, price, _id, action, img}) => {
     const picture = getImage(img)
     return (
-        <div className={'md:flex-row flex-col flex gap-4 bg-neutral-800 p-8 items-center justify-around md:rounded-md'}>
+        <div className={'md:flex-row flex-col flex gap-4 bg-neutral-800 p-8 items-center justify-center md:rounded-md'}>
             <Link to={`/products/${_id}`}>
                 <img src={picture} alt={name} width={'260px'}/>
             </Link>
-            <div className={'flex flex-col md:px-4 justify-center gap-6 basis-1/3'}>
+            <div className={'flex flex-col md:px-4 justify-center gap-6 basis-2/3'}>
                 <div className={'my-4 flex items-center justify-between gap-4'}>
                     <Link to={`/products/${_id}`}>{brand + " " + name}</Link>
                     <Link to={`/products/${_id}`} className={'px-8 py-3 bg-emerald-700 rounded-md'}>Подробнее</Link>

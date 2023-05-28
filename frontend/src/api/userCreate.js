@@ -3,8 +3,17 @@ export const userCreate = async ({request}) => {
     const formData = await request.formData();
     const {number} = Object.fromEntries(formData);
     if (isNaN(Number(number))) {
-        return 'Неправильно набран номер!'
+        return 'Неправильно набран номер! Нужно использовать только цифры [0-9]!'
     }
+
+    if (number[0] !== '+' || number[1] !== '7') {
+        return 'Неправильно набран номер! Номер должен начинаться с "+7"!'
+    }
+
+    if (number.length < 11) {
+        return 'Неправильно набран номер! В номере должно быть минимум 10 символов!'
+    }
+
     const userData = {phone : number}
     const data = await fetch(process.env.REACT_APP_API_URI + `/users`, {
         method: 'POST',
