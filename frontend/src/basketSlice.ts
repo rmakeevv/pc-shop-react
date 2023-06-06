@@ -1,15 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
+
+interface BasketState {
+    value: {
+        items: Array<any>,
+        isOrdered?: boolean
+    }
+
+}
+
+const initialState: BasketState = {
+    value: {
+        items: []
+    }
+}
 export const basketSlice = createSlice({
     name: 'basket',
-    initialState: {
-        value: {
-            items: []
-        }
-    },
+    initialState,
     reducers: {
         addItem: (state, action) => {
             state.value = {
-                items: [...state.value.items,({...action.payload, basketItemId: Date.now()})]
+                items: [...state.value.items,{...action.payload, basketItemId: Date.now()}]
             }
         },
         removeItem: (state, action) => {

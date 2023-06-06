@@ -4,6 +4,7 @@ import {CheckoutItem} from "../components/CheckoutItem";
 import {CheckoutInfoPanel} from "../components/CheckoutInfoPanel";
 
 export const Checkout = () => {
+    // @ts-ignore
     const basket = useSelector(state => state.basket.value)
     return basket.isOrdered
         ? (

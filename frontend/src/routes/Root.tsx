@@ -18,7 +18,7 @@ export const loader = async () => {
         }
         ,)
         .then(res => res)
-        .catch((err) => console.log(err.message))
+        .catch(() => null)
     return {token, userId }
 }
 export const Root = () => {
@@ -28,7 +28,7 @@ export const Root = () => {
 
     useEffect(() => {
         if (!data) {
-            return;
+            return
         }
         dispatch(logIn(data))
     })

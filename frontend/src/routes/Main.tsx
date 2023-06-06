@@ -1,3 +1,4 @@
+// @ts-ignore
 import pc from '../assets/images/products/laptops/img.png'
 import {Link} from "react-router-dom";
 export const Main = () => {

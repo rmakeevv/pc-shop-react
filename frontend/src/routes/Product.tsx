@@ -5,7 +5,7 @@ import {getImage} from "../services/getImage";
 export const Product = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const data = useLoaderData()
+    const data:any = useLoaderData()
     const picture = getImage(data.img)
     return data
         ? (

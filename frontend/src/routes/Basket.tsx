@@ -3,6 +3,7 @@ import {MyLink} from "../components/MyLink";
 import {BasketItem} from "../components/BasketItem";
 import {BasketInfoPanel} from "../components/BasketInfoPanel";
 export const Basket = () => {
+    // @ts-ignore
     const basket = useSelector(state => state.basket.value)
     return (
         <div className={'container md:p-6 mx-auto'}>

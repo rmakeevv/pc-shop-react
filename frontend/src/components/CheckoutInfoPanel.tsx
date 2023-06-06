@@ -4,7 +4,9 @@ import {checkOut} from "../basketSlice";
 import {getDate} from "../services/getDate";
 
 export const CheckoutInfoPanel = () => {
+    // @ts-ignore
     const basket = useSelector(state => state.basket.value)
+    // @ts-ignore
     const auth = useSelector(state => state.auth.value)
     const dispatch = useDispatch()
     const total = basket.items.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)

@@ -1,11 +1,16 @@
 import {Link} from "react-router-dom";
+// @ts-ignore
 import logo from "../assets/images/logo/gear-ico.png";
 import {useSelector} from "react-redux";
+// @ts-ignore
 import userIcon from '../assets/images/UI/free-icon-user-149071.png'
+// @ts-ignore
 import userCart from '../assets/images/UI/free-icon-cart-8415432.png'
 
 export const Header = () => {
+    // @ts-ignore
     const auth = useSelector(state => state.auth.value)
+    // @ts-ignore
     const basket = useSelector(state => state.basket.value)
     return (
         <nav className={'text-white fixed w-full top-0'} style={{background: '#1a1a1a', borderBottom: "1px solid rgb(84 84 84 / 48%)"}}>

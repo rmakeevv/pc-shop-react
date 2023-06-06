@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {addItem} from "../basketSlice";
 export const Products = () => {
     const dispatch = useDispatch()
-    const data = useLoaderData()
+    const data: any = useLoaderData()
     return  (
             <div className={'flex flex-col container mx-auto md:px-12'}>
                 <div className={'md:p-8 p-4 md:rounded-xl flex items-center md:flex-row flex-col justify-between'} style={{border: "1px solid rgb(84 84 84 / 48%)"}} >

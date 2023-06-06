@@ -2,8 +2,10 @@ import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 export const BasketInfoPanel = () => {
+    // @ts-ignore
     const basket = useSelector(state => state.basket.value)
     const total = basket.items.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)
+    // @ts-ignore
     const auth = useSelector(state => state.auth.value)
     return (
         <div className={'p-6 grid gap-4 bg-neutral-800 rounded-md'} style={{border: "1px solid rgb(84 84 84 / 48%)"}}>

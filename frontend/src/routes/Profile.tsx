@@ -1,3 +1,4 @@
+// @ts-ignore
 import userIcon from '../assets/images/UI/user-circle-icon-png.png'
 import {Link, redirect} from "react-router-dom";
 import {Button} from "../components/Button";
@@ -10,6 +11,7 @@ export const loader = () => {
     } else return null
 }
 export const Profile = () => {
+    // @ts-ignore
     const auth = useSelector(state => state.auth.value)
     const dispatch = useDispatch()
     const pageLogOut = () => {
