@@ -41,7 +41,7 @@ export const Orders = () => {
         : (
             <div className={'flex items-center flex-col p-4'}>
                 <h1 className={'text-center text-white text-xl'}>Вы еще не делали заказов!</h1>
-                <Link to={'/products'} className={'font-medium bg-emerald-700 text-white px-6 py-3 m-4 rounded-md'}>Перейти в каталог!</Link>
+                <Link to={'/products'} className={'font-medium bg-indigo-600 text-white px-6 py-3 m-4 rounded-md'}>Перейти в каталог!</Link>
             </div>
         )
 };

@@ -34,9 +34,9 @@ export const Root = () => {
     })
 
     return (
-        <div className={'font-sans h-screen'} style={{background: '#1a1a1a'}}>
+        <div className={'font-sans h-screen bg-neutral-900'} >
             <Header/>
-            <div className={`mt-14 pt-10 ${navigation.state === "loading" ? "opacity-50" : "" }`} style={{background: '#1a1a1a'}}>
+            <div className={`mt-14 pt-10 ${navigation.state === "loading" ? "opacity-50" : "" } bg-neutral-900`}>
                 <Outlet/>
             </div>
         </div>
