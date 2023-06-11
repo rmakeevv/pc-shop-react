@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
 import {Button} from "./Button";
-// @ts-ignore
-import availableImg from '../assets/images/UI/delivery.png'
 import {getImage} from "../services/getImage";
 export const ProductItem = ({name, brand, price, _id, action, img}) => {
     const picture = getImage(img)

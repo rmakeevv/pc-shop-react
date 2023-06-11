@@ -1,9 +1,8 @@
 export const getProducts = async({request}) => {
     const url = new URL(request.url)
-    const category = url.searchParams.get('category')
     const order = url.searchParams.get('order')
-    const urlApi = category
-        ? process.env.REACT_APP_API_URI + `/categories/${category}/${order}`
+    const urlApi = order
+        ? process.env.REACT_APP_API_URI + `/categories/${order}`
         : process.env.REACT_APP_API_URI + `/products/`
     const data = await fetch(urlApi)
         .then(res => res.json())
