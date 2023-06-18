@@ -6,3 +6,7 @@
  background-image: url("../../assets/images/products/desktops/ABS_BUILD_2.jpg");
  background-size: cover;
 }
+
+body {
+    background: rgb(23,23,23);
+}
